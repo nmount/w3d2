@@ -16,12 +16,19 @@ factorial(3); // 6
 factorial(5); // 120
 ***********************************************************************/
 
-// your code here
-  
+const factorial = n => {
+  if (n === 1) return 1;
+
+  return n * factorial(n - 1);
+}
+
+factorial(1); // 1
+factorial(3); // 6
+factorial(5); // 120
+
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = factorial;
 } catch (e) {
   module.exports = null;
 }
-  
