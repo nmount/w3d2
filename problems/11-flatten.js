@@ -9,7 +9,7 @@ flatten([]); // []
 flatten([1, 2]); // [1, 2]
 flatten([1, [2, [3]]]); // [1, 2, 3]
 
-Array.isArray(element); 
+Array.isArray(element);
 
 
 ***********************************************************************/
@@ -37,6 +37,7 @@ const flatten = array => {
 }
 
 console.log(flatten([1, [2, [3]]])); // [1, 2, 3])
+console.log(flatten([1, [2, [3]], [[[9]], 2]])); // ultimate test case, [1, 2, 3, 9, 2]
 
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
