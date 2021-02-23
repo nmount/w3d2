@@ -4,16 +4,28 @@ it reversed.
 
 Examples:
 
-reverse("house"); // "esuoh"
-reverse("dog"); // "god"
+
+***********************************************************************/
+
+// your code here
+function reverse(string) {
+  if (string.length === 0) {
+    return '';
+  }
+  return reverse(string.slice(1)) + string[0];
+}
+//ouseh; <---
+//useho
+//sehou
+//ehous
+//house
+
+console.log(reverse("house")); // "esuoh"
+console.log(reverse("dog")); // "god"
 reverse("atom"); // "mota"
 reverse("q"); // "q"
 reverse("id"); // "di"
 reverse(""); // ""
-***********************************************************************/
-
-// your code here
-
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = reverse;
