@@ -28,9 +28,6 @@ const flatten = array => {
     } else {
       newArray.push(currentElement);
     }
-
-
-
   }
 
   return newArray;
