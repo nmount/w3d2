@@ -27,7 +27,7 @@ function sort(nums, sorted = []) {
   }
   let smallestIndex = 0;
   for (let i = 0; i < nums.length; i++) {
-    let currentNum = nums[i];;
+    let currentNum = nums[i];
     if (currentNum < nums[smallestIndex]) {
       smallestIndex = i;
     }

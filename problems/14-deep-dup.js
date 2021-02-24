@@ -21,27 +21,50 @@ when compared to various indexes of the original array, should evaluate to false
 Examples:
 
 
+Current problem : using .slice on an array only makes a copy of the OUTER array. The inner arrays are still referencing the same location in memory
 
+Move through each element in the array. If the element is an array, recurse into that array
 
 ***********************************************************************/
 
 // your code here
-function deepDup(array) {
-  let newArray = [];
+// function deepDup(array) {
+//   let newArray = [];
+//   for (let i = 0; i < array.length; i++) {
+//     let el = array[i];
+//     newArray.push(deepDup(el));
+//   }
+//   return newArray;
+// }
+
+const deepDup = array => {
+  let newArr = [];
+
+
   for (let i = 0; i < array.length; i++) {
-    let el = array[i];
-    newArray.push(deepDup(el));
+    let currentElement = array[i];
+
+    if (Array.isArray(currentElement)) {
+      let clone = deepDup(currentElement);
+      newArr.push(clone);
+    } else {
+      newArr.push(currentElement);
+    }
   }
-  return newArray;
+
+
+  return newArr;
 }
+
+
 
 
 let arr = [[1], [2, [3]]];
 duped = deepDup(arr); // [[1], [2, [3]]]
 console.log(duped);
-console.log(arr[0] === duped[0]); // false
-console.log(arr[1] === duped[1]); // false
-console.log(arr[1][1] === duped[1][1]); // false
+// console.log(arr[0] === duped[0]); // false
+// console.log(arr[1] === duped[1]); // false
+// console.log(arr[1][1] === duped[1][1]); // false
 
 //Note:
 // if you compare a 1 dimensional array of numbers like below,
